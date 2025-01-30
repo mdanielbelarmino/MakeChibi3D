@@ -58,15 +58,14 @@ export const UI = () => {
                         className="pointer-events-auto"
                         href="https://makechibi3d-u31976.vm.elestio.app/"
                     >
-                        <img className="w-20" src="images/icon.png"/>
+                        <img className="w-20" src="images/icon.png" />
                     </a>
                     <DownloadButton />
                 </div>
                 <div className="flex flex-col gap-6">
-                    <assetBox />
+                    <AssetsBox />
                 </div>
             </div>
         </main>
-    )
-
-}
+    );
+};
