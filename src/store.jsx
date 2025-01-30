@@ -2,14 +2,13 @@ import { create } from 'zustand'
 import PocketBase from 'pocketbase';
 
 const pocketBaseUrl = import.meta.env.VITE_POCKETBASE_URL;
-
 if (!pocketBaseUrl) {
     throw new Error("VITE_POCKETBASE_URL is required");
 }
 
-const pb = new PocketBase(pocketBaseUrl);
+export const pb = new PocketBase(pocketBaseUrl);
 
-export useMakeChibiStore = create((set) => ({
+export const useMakeChibiStore = create((set) => ({
     categories: 0,
     currentCategory: null,
     assets: [],

@@ -1,10 +1,10 @@
 ﻿import { useEffect } from "react";
-import { pb, useConfiguratorStore } from "../store";
+import { pb, useMakeChibiStore } from "../store";
 
 
 const AssetsBox = () => {
     const { categories, currentCategory, fetchCategories, setCurrentCategory } =
-        useConfiguratorStore();
+        useMakeChibiStore();
 
     useEffect(() => {
         fetchCategories();
