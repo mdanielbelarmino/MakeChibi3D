@@ -9,21 +9,22 @@ if (!pocketBaseUrl) {
 export const pb = new PocketBase(pocketBaseUrl);
 
 export const useMakeChibiStore = create((set) => ({
-    categories: 0,
+    categories: [],
     currentCategory: null,
     assets: [],
     fetchCategories: async () => {
         // you can also fetch all records at once via getFullList
-        const categories = await pb.collection('CustomizationGroups').getFullList({
-            sort: '+position',
+        const categories = await pb.collection("CustomizationGroups").getFullList({
+            sort: "+position",
         });
-        const assets = await pb.collection('CustomizationAssets').getFullList({
-            sort: '-created',
+        const assets = await pb.collection("CustomizationAssets").getFullList({
+            sort: "-created",
+        });
+        categories.forEach((category) => {
+            category.assets = assets.filter((asset) => asset.group === category.id);
         });
 
         set({ categories, currentCategory: categories[0], assets });
     },
-
-    setCurrentCategory: (category) => set({ currentCategory: category}),
-
-}))
+    setCurrentCategory: (category) => set({ currentCategory: category }),
+}));

@@ -39,7 +39,6 @@ const AssetsBox = () => {
     );
 };
 
-
 const DownloadButton = () => {
     return (
         <button className="pointer-events-auto rounded-lg bg-indigo-500 px-4 py-3 font-medium text-white transition-colors duration-300 hover:bg-indigo-600">
@@ -49,7 +48,6 @@ const DownloadButton = () => {
 };
 
 export const UI = () => {
-
     return (
         <main className="z-10 pointer-events-none fixed inset-0 p-10">
             <div className="mx-auto flex h-full w-full max-w-screen-xl flex-col justify-between">
@@ -58,7 +56,7 @@ export const UI = () => {
                         className="pointer-events-auto"
                         href="https://makechibi3d-u31976.vm.elestio.app/"
                     >
-                        <img className="w-20" src="images/icon.png" />
+                        <img className="w-20" src="/images/icon.png" />
                     </a>
                     <DownloadButton />
                 </div>
